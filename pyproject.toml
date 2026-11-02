@@ -1,0 +1,34 @@
+[project]
+name = "school-menu-requisitions"
+version = "1.1.0"
+description = "Generate requisition workbooks from Excel menu sheets"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+dependencies = [
+    "openpyxl>=3.1.5",
+    "streamlit>=1.66.1",
+    "xlrd>=2.0.2",
+]
+
+[project.optional-dependencies]
+dev = ["mypy>=1.14.1", "ruff>=0.8.6"]
+
+[tool.setuptools.packages.find]
+include = ["src*"]
+
+[tool.ruff]
+target-version = "py312"
+line-length = 99
+lint.select = ["E", "F", "I", "UP", "B", "SIM"]
+lint.ignore = []
+
+[tool.mypy]
+python_version = "3.12"
+disallow_any_generics = true
+disallow_untyped_defs = true
+disallow_incomplete_defs = true
+check_untyped_defs = true
+warn_return_any = true
+no_implicit_reexport = true
+strict_equality = true
